@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mind Map Kepemimpinan (Leadership)</title>
+    <title>Mind Map Kepemimpinan (Leadership) - Dark Theme</title>
     <style>
+        /* Apply smooth scrolling behavior to the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            /* Dark theme background */
+            background-color: #1a1a2e; /* Dark Blue/Near Black */
             margin: 0;
             padding: 20px;
-            color: #333;
+             /* White text color for contrast */
+            color: #ffffff;
         }
 
         .mindmap-container {
-            background-color: #fff;
+             /* Slightly lighter dark shade for container */
+            background-color: #1f1f38;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+             /* Subtle shadow, less prominent on dark */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
             max-width: 900px;
             margin: 20px auto;
+            border: 1px solid #44446a; /* Subtle border */
         }
 
         h1 {
             text-align: center;
-            color: #2c3e50;
+             /* White heading */
+            color: #ffffff;
             margin-bottom: 30px;
         }
 
         /* Basic Tree Structure Styling */
         .mindmap {
             list-style-type: none;
-            padding-left: 0; /* Remove default padding */
+            padding-left: 0;
             margin: 0;
         }
 
@@ -40,32 +51,36 @@
             list-style-type: none;
             margin-top: 5px;
             padding-left: 25px; /* Indentation for children */
-            border-left: 2px solid #bdc3c7;
-            display: none; /* Hidden by default */
+            /* Accent color for connecting line */
+            border-left: 2px solid #ffd700; /* Bright Yellow */
+            /* --- Smooth Animation --- */
+            overflow: hidden; /* Hide content that exceeds max-height */
+            max-height: 0; /* Collapsed by default */
+            /* Smooth transition for expand/collapse */
+            transition: max-height 0.4s ease-in-out;
         }
 
         .mindmap li {
             margin: 10px 0;
-            position: relative; /* For pseudo-elements if needed */
-            background-color: #ecf0f1;
-            padding: 10px;
+            position: relative;
+             /* Darker node background */
+            background-color: #2a2a4a;
+            padding: 12px;
             border-radius: 5px;
-            border: 1px solid #dcdcdc;
+            /* Subtle border for nodes */
+            border: 1px solid #44446a;
+             /* Add transition for potential background changes */
+            transition: background-color 0.3s ease;
         }
 
-         /* Styling for the top-level items */
-        .mindmap > li {
-             background-color: #3498db;
-             color: white;
-             border-color: #2980b9;
+        /* Slight hover effect for nodes */
+        .mindmap li:hover {
+            background-color: #3a3a5a;
         }
-        .mindmap > li > .node-content > .toggler {
-            color: white; /* Ensure toggler text is visible on dark background */
-        }
-         .mindmap > li > .node-content > .explanation {
-            color: #f1f1f1; /* Lighter explanation text for top level */
-         }
 
+
+         /* No special styling needed for top-level items anymore */
+         /* .mindmap > li { ... } */
 
         .node-content {
             display: flex;
@@ -74,38 +89,48 @@
 
         .toggler {
             cursor: pointer;
-            font-weight: bold;
-            color: #2980b9;
-            display: block; /* Make it take full width */
+             /* White toggler text */
+            color: #ffffff;
+            display: block;
+             /* Remove default bold, handled by <b> tag */
+            /* font-weight: bold; */
         }
 
         .toggler::before {
-            content: '+ '; /* Collapsed state marker */
-            font-weight: bold;
-            margin-right: 5px;
-            color: #e74c3c;
+            /* Collapsed state marker: Right-pointing arrow */
+            content: '▶ ';
+            font-weight: normal; /* Ensure icon isn't bold */
+            margin-right: 8px;
+             /* Accent color for icon */
+            color: #ffd700; /* Bright Yellow */
+             /* Add transition for smooth rotation (optional) */
+             display: inline-block;
+             transition: transform 0.3s ease;
         }
 
         .explanation {
-            margin-top: 5px;
+            margin-top: 8px;
             font-size: 0.95em;
-            color: #555;
+             /* Lighter grey for explanation text */
+            color: #cccccc;
         }
 
         /* Expanded State */
         .mindmap li.expanded > ul {
-            display: block; /* Show children when expanded */
+             /* Set max-height large enough to show content */
+            max-height: 1000px; /* Adjust if needed */
         }
 
         .mindmap li.expanded > .node-content > .toggler::before {
-            content: '- '; /* Expanded state marker */
-             color: #2ecc71;
+            /* Expanded state marker: Down-pointing arrow */
+            /* content: '▼ '; */
+             /* Rotate the arrow instead of changing content */
+            transform: rotate(90deg);
         }
 
-        /* Different background colors for deeper levels (optional) */
-         .mindmap > li > ul > li { background-color: #e9f5ff; border-color: #cde7fd;}
-         .mindmap > li > ul > li > ul > li { background-color: #fdf7e8; border-color: #fbebc7;}
-
+         /* Optional: Slightly different node colors for depth */
+         .mindmap > li > ul > li { background-color: #303050; border-color: #50507a;}
+         .mindmap > li > ul > li > ul > li { background-color: #353555; border-color: #555580;}
 
     </style>
 </head>
@@ -113,11 +138,11 @@
 
 <div class="mindmap-container">
     <h1>Mind Map: Kepemimpinan (Leadership)</h1>
-    <p>Ringkasan Chapter 12 - Robbins & Judge, Organizational Behavior 14th Ed.</p>
+    <p style="color: #dddddd; text-align: center;">Ringkasan Chapter 12 - Robbins & Judge, Organizational Behavior 14th Ed.</p>
 
     <ul class="mindmap">
-        <li class="expanded"> <div class="node-content">
-                <span class="toggler">Definisi & Peran Kepemimpinan</span>
+        <li> <div class="node-content">
+                 <span class="toggler"><b>Definisi & Peran Kepemimpinan</b></span>
                 <div class="explanation">
                     Memahami dasar kepemimpinan dan perbedaannya dengan manajemen.
                 </div>
@@ -125,7 +150,7 @@
             <ul>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Kepemimpinan (Leadership)</span>
+                         <span class="toggler"><b>Kepemimpinan (Leadership)</b></span>
                          <div class="explanation">
                              Kemampuan untuk memengaruhi suatu kelompok menuju pencapaian visi atau serangkaian tujuan. Fokus pada pengaruh dan arah.
                          </div>
@@ -133,7 +158,7 @@
                 </li>
                 <li>
                      <div class="node-content">
-                        <span class="toggler">Manajemen (Management)</span>
+                         <span class="toggler"><b>Manajemen (Management)</b></span>
                         <div class="explanation">
                             Penggunaan otoritas yang melekat dalam jabatan formal untuk memperoleh kepatuhan dari anggota organisasi. Fokus pada kompleksitas, perencanaan, pengorganisasian, dan kontrol.
                         </div>
@@ -141,7 +166,7 @@
                 </li>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Kebutuhan Keduanya</span>
+                        <span class="toggler"><b>Kebutuhan Keduanya</b></span>
                         <div class="explanation">
                            Organisasi membutuhkan kepemimpinan yang kuat dan manajemen yang kuat untuk efektivitas optimal. Keduanya saling melengkapi.
                         </div>
@@ -151,7 +176,7 @@
         </li>
         <li>
             <div class="node-content">
-                <span class="toggler">Teori Sifat (Trait Theories)</span>
+                <span class="toggler"><b>Teori Sifat (Trait Theories)</b></span>
                  <div class="explanation">
                     Fokus pada kualitas dan karakteristik pribadi (sifat fisik, sosial, kepribadian, intelektual) yang membedakan pemimpin dari non-pemimpin.
                  </div>
@@ -159,7 +184,7 @@
             <ul>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Konsep Dasar</span>
+                         <span class="toggler"><b>Konsep Dasar</b></span>
                         <div class="explanation">
                             Awalnya berasumsi pemimpin dilahirkan, bukan diciptakan. Mencari sifat universal yang dimiliki semua pemimpin.
                         </div>
@@ -167,7 +192,7 @@
                 </li>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Sifat yang Berkorelasi (Big Five)</span>
+                        <span class="toggler"><b>Sifat yang Berkorelasi (Big Five)</b></span>
                         <div class="explanation">
                             Studi modern (termasuk dari ringkasan) menunjukkan korelasi antara kepemimpinan dengan: Ekstraversi (paling prediktif), Kesadaran (Conscientiousness), dan Keterbukaan (Openness to Experience). Inteligensi Emosional (EI) juga penting.
                         </div>
@@ -175,9 +200,9 @@
                 </li>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Keterbatasan</span>
+                         <span class="toggler"><b>Keterbatasan</b></span>
                         <div class="explanation">
-                            Hanya memprediksi *kemunculan* pemimpin, bukan *efektivitasnya*. Tidak ada sifat universal yang menjamin kesuksesan dalam semua situasi. Mengabaikan faktor situasional dan pengikut.
+                            Hanya memprediksi <i>kemunculan</i> pemimpin, bukan <i>efektivitasnya</i>. Tidak ada sifat universal yang menjamin kesuksesan dalam semua situasi. Mengabaikan faktor situasional dan pengikut.
                         </div>
                     </div>
                 </li>
@@ -185,7 +210,7 @@
         </li>
          <li>
             <div class="node-content">
-                <span class="toggler">Teori Perilaku (Behavioral Theories)</span>
+                <span class="toggler"><b>Teori Perilaku (Behavioral Theories)</b></span>
                  <div class="explanation">
                     Berfokus pada perilaku spesifik yang membedakan pemimpin dari non-pemimpin. Berasumsi kepemimpinan dapat dipelajari.
                  </div>
@@ -193,7 +218,7 @@
             <ul>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Konsep Dasar</span>
+                        <span class="toggler"><b>Konsep Dasar</b></span>
                         <div class="explanation">
                            Jika ada perilaku kepemimpinan yang spesifik, maka kita bisa melatih orang untuk menjadi pemimpin.
                         </div>
@@ -201,18 +226,18 @@
                 </li>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Dimensi Utama (Studi Ohio State & Michigan)</span>
+                        <span class="toggler"><b>Dimensi Utama (Studi Ohio State & Michigan)</b></span>
                         <div class="explanation">
                             Menghasilkan dua dimensi utama perilaku:
-                            1. **Initiating Structure / Production-Oriented:** Fokus pada tugas, penetapan peran, standar kerja, dan pencapaian tujuan.
-                            2. **Consideration / Employee-Oriented:** Fokus pada hubungan kerja, rasa saling percaya, menghargai ide bawahan, dan memperhatikan perasaan mereka.
+                            1. <b>Initiating Structure / Production-Oriented:</b> Fokus pada tugas, penetapan peran, standar kerja, dan pencapaian tujuan.
+                            2. <b>Consideration / Employee-Oriented:</b> Fokus pada hubungan kerja, rasa saling percaya, menghargai ide bawahan, dan memperhatikan perasaan mereka.
                             (Ringkasan menyebut "dua dimensi yang dapat digunakan").
                         </div>
                     </div>
                 </li>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Keterbatasan</span>
+                        <span class="toggler"><b>Keterbatasan</b></span>
                         <div class="explanation">
                             Hasilnya beragam dalam mengaitkan perilaku dengan kinerja. Gagal memperhitungkan faktor situasional yang memengaruhi kesuksesan.
                         </div>
@@ -222,7 +247,7 @@
         </li>
          <li>
             <div class="node-content">
-                <span class="toggler">Teori Kontingensi (Contingency Theories)</span>
+                <span class="toggler"><b>Teori Kontingensi (Contingency Theories)</b></span>
                  <div class="explanation">
                     Menghubungkan gaya kepemimpinan dengan situasi. Efektivitas pemimpin bergantung pada kesesuaian gaya dengan kondisi situasional.
                  </div>
@@ -230,7 +255,7 @@
             <ul>
                 <li>
                      <div class="node-content">
-                        <span class="toggler">Konsep Dasar</span>
+                         <span class="toggler"><b>Konsep Dasar</b></span>
                         <div class="explanation">
                            Gaya kepemimpinan yang efektif dalam satu situasi mungkin tidak efektif dalam situasi lain. "It depends".
                         </div>
@@ -238,7 +263,7 @@
                 </li>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Model Utama (Contoh)</span>
+                        <span class="toggler"><b>Model Utama (Contoh)</b></span>
                          <div class="explanation">
                             Meskipun tidak dirinci dalam snippet, model-model ini termasuk: Model Fiedler, Teori Situasional Hersey & Blanchard, Teori Path-Goal, Model Partisipasi Pemimpin Vroom & Yetton.
                          </div>
@@ -246,7 +271,7 @@
                 </li>
                  <li>
                      <div class="node-content">
-                        <span class="toggler">Pentingnya Variabel Situasional & Pengikut</span>
+                         <span class="toggler"><b>Pentingnya Variabel Situasional & Pengikut</b></span>
                         <div class="explanation">
                             Menekankan perlunya mempertimbangkan faktor seperti struktur tugas, hubungan pemimpin-anggota, posisi kekuasaan pemimpin, dan kesiapan/kedewasaan pengikut (disebutkan dalam ringkasan).
                         </div>
@@ -256,7 +281,7 @@
         </li>
          <li>
             <div class="node-content">
-                <span class="toggler">Pendekatan Kontemporer</span>
+                <span class="toggler"><b>Pendekatan Kontemporer</b></span>
                 <div class="explanation">
                     Teori-teori yang lebih baru yang mencoba menjelaskan kepemimpinan yang luar biasa dan inspirasional.
                 </div>
@@ -264,7 +289,7 @@
             <ul>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Kepemimpinan Karismatik</span>
+                         <span class="toggler"><b>Kepemimpinan Karismatik</b></span>
                         <div class="explanation">
                            Pengikut menganggap pemimpin memiliki kemampuan heroik atau luar biasa ketika mengamati perilaku tertentu (visi, pengambilan risiko pribadi, kepekaan terhadap kebutuhan pengikut, perilaku tidak konvensional). Memberikan kontribusi besar pada pemahaman kepemimpinan (disebutkan ringkasan).
                         </div>
@@ -272,7 +297,7 @@
                 </li>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Kepemimpinan Transformasional</span>
+                         <span class="toggler"><b>Kepemimpinan Transformasional</b></span>
                         <div class="explanation">
                             Pemimpin menginspirasi pengikut untuk melampaui kepentingan pribadi demi kebaikan organisasi. Memiliki pengaruh mendalam pada pengikut. Berkaitan erat dengan karismatik, namun lebih fokus pada pengembangan pengikut. Memberikan kontribusi besar (disebutkan ringkasan).
                         </div>
@@ -280,7 +305,7 @@
                 </li>
                  <li>
                     <div class="node-content">
-                        <span class="toggler">Kepemimpinan Otentik (Authentic Leadership)</span>
+                        <span class="toggler"><b>Kepemimpinan Otentik (Authentic Leadership)</b></span>
                         <div class="explanation">
                             Pemimpin yang tahu siapa diri mereka, apa yang mereka yakini dan hargai, dan bertindak berdasarkan nilai-nilai itu secara terbuka dan jujur. Membangun kepercayaan dan dianggap etis (disebutkan ringkasan).
                         </div>
@@ -290,7 +315,7 @@
         </li>
          <li>
             <div class="node-content">
-                <span class="toggler">Aspek Penting Lainnya</span>
+                <span class="toggler"><b>Aspek Penting Lainnya</b></span>
                 <div class="explanation">
                    Elemen kunci yang mendukung kepemimpinan efektif.
                 </div>
@@ -298,7 +323,7 @@
             <ul>
                 <li>
                      <div class="node-content">
-                        <span class="toggler">Etika dan Kepercayaan (Ethics & Trust)</span>
+                         <span class="toggler"><b>Etika dan Kepercayaan (Ethics & Trust)</b></span>
                         <div class="explanation">
                             Kepercayaan adalah fondasi kepemimpinan. Kepemimpinan etis sangat penting. Pemimpin harus dilihat sebagai orang yang dapat dipercaya dan otentik (disebutkan ringkasan). Kepercayaan mendorong pengambilan risiko, berbagi informasi, dan efektivitas kelompok.
                         </div>
@@ -306,7 +331,7 @@
                 </li>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Mentoring</span>
+                         <span class="toggler"><b>Mentoring</b></span>
                          <div class="explanation">
                             Pemimpin senior mensponsori dan mendukung karyawan yang kurang berpengalaman (protégé). Berperan penting dalam pengembangan pemimpin masa depan (disebutkan ringkasan). Memberikan manfaat karir dan psikososial.
                          </div>
@@ -316,7 +341,7 @@
         </li>
         <li>
             <div class="node-content">
-                <span class="toggler">Tantangan dan Kepemimpinan Global</span>
+                <span class="toggler"><b>Tantangan dan Kepemimpinan Global</b></span>
                  <div class="explanation">
                     Faktor-faktor yang dapat membatasi atau memengaruhi efektivitas kepemimpinan, termasuk perbedaan budaya.
                  </div>
@@ -324,7 +349,7 @@
             <ul>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Tantangan terhadap Efektivitas</span>
+                         <span class="toggler"><b>Tantangan terhadap Efektivitas</b></span>
                          <div class="explanation">
                             Substitusi dan netralisator kepemimpinan (misalnya, karakteristik bawahan, tugas, atau organisasi dapat mengurangi kebutuhan akan dukungan pemimpin atau menetralkan efeknya).
                          </div>
@@ -332,7 +357,7 @@
                 </li>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Kepemimpinan Lintas Budaya</span>
+                         <span class="toggler"><b>Kepemimpinan Lintas Budaya</b></span>
                         <div class="explanation">
                             Budaya memengaruhi preferensi gaya kepemimpinan. Studi GLOBE mengidentifikasi aspek kepemimpinan yang universal (misalnya, visi, berorientasi tim) dan yang spesifik budaya (misalnya, partisipatif). Pemimpin perlu menyesuaikan gaya dengan budaya (disebutkan ringkasan). Contoh: gaya partisipatif mungkin berbeda penerimaannya di AS vs. China.
                         </div>
@@ -342,7 +367,7 @@
         </li>
          <li>
             <div class="node-content">
-                <span class="toggler">Ringkasan & Implikasi Manajerial</span>
+                <span class="toggler"><b>Ringkasan & Implikasi Manajerial</b></span>
                  <div class="explanation">
                     Poin-poin kunci dan bagaimana manajer dapat menerapkan konsep kepemimpinan.
                  </div>
@@ -350,7 +375,7 @@
             <ul>
                  <li>
                      <div class="node-content">
-                        <span class="toggler">Sentralitas Kepemimpinan</span>
+                         <span class="toggler"><b>Sentralitas Kepemimpinan</b></span>
                         <div class="explanation">
                             Kepemimpinan sangat penting untuk memahami perilaku kelompok karena pemimpin memberikan arah.
                         </div>
@@ -358,7 +383,7 @@
                 </li>
                  <li>
                      <div class="node-content">
-                        <span class="toggler">Sifat dan Perilaku</span>
+                         <span class="toggler"><b>Sifat dan Perilaku</b></span>
                         <div class="explanation">
                            Sifat (Ekstroversi, Kesadaran, Keterbukaan) dan dimensi perilaku (fokus tugas & fokus hubungan) memberikan wawasan.
                         </div>
@@ -366,7 +391,7 @@
                 </li>
                  <li>
                      <div class="node-content">
-                        <span class="toggler">Konteks Situasional</span>
+                         <span class="toggler"><b>Konteks Situasional</b></span>
                         <div class="explanation">
                            Penting untuk mempertimbangkan variabel situasional, terutama dampak pengikut.
                         </div>
@@ -374,7 +399,7 @@
                  </li>
                 <li>
                     <div class="node-content">
-                        <span class="toggler">Kepemimpinan Inspirasional & Otentik</span>
+                         <span class="toggler"><b>Kepemimpinan Inspirasional & Otentik</b></span>
                          <div class="explanation">
                             Karismatik dan transformasional memberikan kontribusi besar. Pemimpin harus otentik dan dapat dipercaya.
                          </div>
@@ -382,7 +407,7 @@
                 </li>
                  <li>
                      <div class="node-content">
-                        <span class="toggler">Investasi Masa Depan</span>
+                         <span class="toggler"><b>Investasi Masa Depan</b></span>
                         <div class="explanation">
                             Perlu investasi dalam mentoring dan pelatihan pemimpin masa depan.
                         </div>
@@ -404,16 +429,20 @@
                 const parentLi = this.closest('li');
                 if (parentLi) {
                     // Toggle the 'expanded' class on the parent LI
+                    // This class triggers the CSS changes for max-height and icon rotation
                     parentLi.classList.toggle('expanded');
                 }
             });
         });
 
-         // Optional: Automatically expand the first level if needed, or keep specific nodes expanded by default using the 'expanded' class in HTML.
-         // Example: Make all top-level items start expanded
-         // const topLevelItems = document.querySelectorAll('.mindmap > li');
-         // topLevelItems.forEach(item => item.classList.add('expanded'));
-         // Note: The first item is already set to expanded in the HTML above.
+        // Notes on "Smooth Scrolling":
+        // 1. CSS `scroll-behavior: smooth;` (added in CSS) handles page scrolling smoothly if you were to use anchor links (#).
+        // 2. The expand/collapse animation is handled by CSS `transition: max-height ...;` which provides a smooth visual effect.
+        // No additional JavaScript is typically needed for these effects in this context.
+
+        // All nodes start collapsed by default because:
+        // a) The 'expanded' class is NOT initially set on any <li> in the HTML.
+        // b) The CSS rule `.mindmap ul` sets `max-height: 0;` by default.
     });
 </script>
 
