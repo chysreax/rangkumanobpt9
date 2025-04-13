@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Map Kepemimpinan (Leadership)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .mindmap-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* Basic Tree Structure Styling */
+        .mindmap {
+            list-style-type: none;
+            padding-left: 0; /* Remove default padding */
+            margin: 0;
+        }
+
+        .mindmap ul {
+            list-style-type: none;
+            margin-top: 5px;
+            padding-left: 25px; /* Indentation for children */
+            border-left: 2px solid #bdc3c7;
+            display: none; /* Hidden by default */
+        }
+
+        .mindmap li {
+            margin: 10px 0;
+            position: relative; /* For pseudo-elements if needed */
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #dcdcdc;
+        }
+
+         /* Styling for the top-level items */
+        .mindmap > li {
+             background-color: #3498db;
+             color: white;
+             border-color: #2980b9;
+        }
+        .mindmap > li > .node-content > .toggler {
+            color: white; /* Ensure toggler text is visible on dark background */
+        }
+         .mindmap > li > .node-content > .explanation {
+            color: #f1f1f1; /* Lighter explanation text for top level */
+         }
+
+
+        .node-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toggler {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2980b9;
+            display: block; /* Make it take full width */
+        }
+
+        .toggler::before {
+            content: '+ '; /* Collapsed state marker */
+            font-weight: bold;
+            margin-right: 5px;
+            color: #e74c3c;
+        }
+
+        .explanation {
+            margin-top: 5px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* Expanded State */
+        .mindmap li.expanded > ul {
+            display: block; /* Show children when expanded */
+        }
+
+        .mindmap li.expanded > .node-content > .toggler::before {
+            content: '- '; /* Expanded state marker */
+             color: #2ecc71;
+        }
+
+        /* Different background colors for deeper levels (optional) */
+         .mindmap > li > ul > li { background-color: #e9f5ff; border-color: #cde7fd;}
+         .mindmap > li > ul > li > ul > li { background-color: #fdf7e8; border-color: #fbebc7;}
+
+
+    </style>
+</head>
+<body>
+
+<div class="mindmap-container">
+    <h1>Mind Map: Kepemimpinan (Leadership)</h1>
+    <p>Ringkasan Chapter 12 - Robbins & Judge, Organizational Behavior 14th Ed.</p>
+
+    <ul class="mindmap">
+        <li class="expanded"> <div class="node-content">
+                <span class="toggler">Definisi & Peran Kepemimpinan</span>
+                <div class="explanation">
+                    Memahami dasar kepemimpinan dan perbedaannya dengan manajemen.
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Kepemimpinan (Leadership)</span>
+                         <div class="explanation">
+                             Kemampuan untuk memengaruhi suatu kelompok menuju pencapaian visi atau serangkaian tujuan. Fokus pada pengaruh dan arah.
+                         </div>
+                    </div>
+                </li>
+                <li>
+                     <div class="node-content">
+                        <span class="toggler">Manajemen (Management)</span>
+                        <div class="explanation">
+                            Penggunaan otoritas yang melekat dalam jabatan formal untuk memperoleh kepatuhan dari anggota organisasi. Fokus pada kompleksitas, perencanaan, pengorganisasian, dan kontrol.
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Kebutuhan Keduanya</span>
+                        <div class="explanation">
+                           Organisasi membutuhkan kepemimpinan yang kuat dan manajemen yang kuat untuk efektivitas optimal. Keduanya saling melengkapi.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="node-content">
+                <span class="toggler">Teori Sifat (Trait Theories)</span>
+                 <div class="explanation">
+                    Fokus pada kualitas dan karakteristik pribadi (sifat fisik, sosial, kepribadian, intelektual) yang membedakan pemimpin dari non-pemimpin.
+                 </div>
+            </div>
+            <ul>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Konsep Dasar</span>
+                        <div class="explanation">
+                            Awalnya berasumsi pemimpin dilahirkan, bukan diciptakan. Mencari sifat universal yang dimiliki semua pemimpin.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Sifat yang Berkorelasi (Big Five)</span>
+                        <div class="explanation">
+                            Studi modern (termasuk dari ringkasan) menunjukkan korelasi antara kepemimpinan dengan: Ekstraversi (paling prediktif), Kesadaran (Conscientiousness), dan Keterbukaan (Openness to Experience). Inteligensi Emosional (EI) juga penting.
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Keterbatasan</span>
+                        <div class="explanation">
+                            Hanya memprediksi *kemunculan* pemimpin, bukan *efektivitasnya*. Tidak ada sifat universal yang menjamin kesuksesan dalam semua situasi. Mengabaikan faktor situasional dan pengikut.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+         <li>
+            <div class="node-content">
+                <span class="toggler">Teori Perilaku (Behavioral Theories)</span>
+                 <div class="explanation">
+                    Berfokus pada perilaku spesifik yang membedakan pemimpin dari non-pemimpin. Berasumsi kepemimpinan dapat dipelajari.
+                 </div>
+            </div>
+            <ul>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Konsep Dasar</span>
+                        <div class="explanation">
+                           Jika ada perilaku kepemimpinan yang spesifik, maka kita bisa melatih orang untuk menjadi pemimpin.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Dimensi Utama (Studi Ohio State & Michigan)</span>
+                        <div class="explanation">
+                            Menghasilkan dua dimensi utama perilaku:
+                            1. **Initiating Structure / Production-Oriented:** Fokus pada tugas, penetapan peran, standar kerja, dan pencapaian tujuan.
+                            2. **Consideration / Employee-Oriented:** Fokus pada hubungan kerja, rasa saling percaya, menghargai ide bawahan, dan memperhatikan perasaan mereka.
+                            (Ringkasan menyebut "dua dimensi yang dapat digunakan").
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Keterbatasan</span>
+                        <div class="explanation">
+                            Hasilnya beragam dalam mengaitkan perilaku dengan kinerja. Gagal memperhitungkan faktor situasional yang memengaruhi kesuksesan.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+         <li>
+            <div class="node-content">
+                <span class="toggler">Teori Kontingensi (Contingency Theories)</span>
+                 <div class="explanation">
+                    Menghubungkan gaya kepemimpinan dengan situasi. Efektivitas pemimpin bergantung pada kesesuaian gaya dengan kondisi situasional.
+                 </div>
+            </div>
+            <ul>
+                <li>
+                     <div class="node-content">
+                        <span class="toggler">Konsep Dasar</span>
+                        <div class="explanation">
+                           Gaya kepemimpinan yang efektif dalam satu situasi mungkin tidak efektif dalam situasi lain. "It depends".
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Model Utama (Contoh)</span>
+                         <div class="explanation">
+                            Meskipun tidak dirinci dalam snippet, model-model ini termasuk: Model Fiedler, Teori Situasional Hersey & Blanchard, Teori Path-Goal, Model Partisipasi Pemimpin Vroom & Yetton.
+                         </div>
+                    </div>
+                </li>
+                 <li>
+                     <div class="node-content">
+                        <span class="toggler">Pentingnya Variabel Situasional & Pengikut</span>
+                        <div class="explanation">
+                            Menekankan perlunya mempertimbangkan faktor seperti struktur tugas, hubungan pemimpin-anggota, posisi kekuasaan pemimpin, dan kesiapan/kedewasaan pengikut (disebutkan dalam ringkasan).
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+         <li>
+            <div class="node-content">
+                <span class="toggler">Pendekatan Kontemporer</span>
+                <div class="explanation">
+                    Teori-teori yang lebih baru yang mencoba menjelaskan kepemimpinan yang luar biasa dan inspirasional.
+                </div>
+            </div>
+            <ul>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Kepemimpinan Karismatik</span>
+                        <div class="explanation">
+                           Pengikut menganggap pemimpin memiliki kemampuan heroik atau luar biasa ketika mengamati perilaku tertentu (visi, pengambilan risiko pribadi, kepekaan terhadap kebutuhan pengikut, perilaku tidak konvensional). Memberikan kontribusi besar pada pemahaman kepemimpinan (disebutkan ringkasan).
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Kepemimpinan Transformasional</span>
+                        <div class="explanation">
+                            Pemimpin menginspirasi pengikut untuk melampaui kepentingan pribadi demi kebaikan organisasi. Memiliki pengaruh mendalam pada pengikut. Berkaitan erat dengan karismatik, namun lebih fokus pada pengembangan pengikut. Memberikan kontribusi besar (disebutkan ringkasan).
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                    <div class="node-content">
+                        <span class="toggler">Kepemimpinan Otentik (Authentic Leadership)</span>
+                        <div class="explanation">
+                            Pemimpin yang tahu siapa diri mereka, apa yang mereka yakini dan hargai, dan bertindak berdasarkan nilai-nilai itu secara terbuka dan jujur. Membangun kepercayaan dan dianggap etis (disebutkan ringkasan).
+                        </div>
+                    </div>
+                 </li>
+            </ul>
+        </li>
+         <li>
+            <div class="node-content">
+                <span class="toggler">Aspek Penting Lainnya</span>
+                <div class="explanation">
+                   Elemen kunci yang mendukung kepemimpinan efektif.
+                </div>
+            </div>
+            <ul>
+                <li>
+                     <div class="node-content">
+                        <span class="toggler">Etika dan Kepercayaan (Ethics & Trust)</span>
+                        <div class="explanation">
+                            Kepercayaan adalah fondasi kepemimpinan. Kepemimpinan etis sangat penting. Pemimpin harus dilihat sebagai orang yang dapat dipercaya dan otentik (disebutkan ringkasan). Kepercayaan mendorong pengambilan risiko, berbagi informasi, dan efektivitas kelompok.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Mentoring</span>
+                         <div class="explanation">
+                            Pemimpin senior mensponsori dan mendukung karyawan yang kurang berpengalaman (protégé). Berperan penting dalam pengembangan pemimpin masa depan (disebutkan ringkasan). Memberikan manfaat karir dan psikososial.
+                         </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="node-content">
+                <span class="toggler">Tantangan dan Kepemimpinan Global</span>
+                 <div class="explanation">
+                    Faktor-faktor yang dapat membatasi atau memengaruhi efektivitas kepemimpinan, termasuk perbedaan budaya.
+                 </div>
+            </div>
+            <ul>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Tantangan terhadap Efektivitas</span>
+                         <div class="explanation">
+                            Substitusi dan netralisator kepemimpinan (misalnya, karakteristik bawahan, tugas, atau organisasi dapat mengurangi kebutuhan akan dukungan pemimpin atau menetralkan efeknya).
+                         </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Kepemimpinan Lintas Budaya</span>
+                        <div class="explanation">
+                            Budaya memengaruhi preferensi gaya kepemimpinan. Studi GLOBE mengidentifikasi aspek kepemimpinan yang universal (misalnya, visi, berorientasi tim) dan yang spesifik budaya (misalnya, partisipatif). Pemimpin perlu menyesuaikan gaya dengan budaya (disebutkan ringkasan). Contoh: gaya partisipatif mungkin berbeda penerimaannya di AS vs. China.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+         <li>
+            <div class="node-content">
+                <span class="toggler">Ringkasan & Implikasi Manajerial</span>
+                 <div class="explanation">
+                    Poin-poin kunci dan bagaimana manajer dapat menerapkan konsep kepemimpinan.
+                 </div>
+            </div>
+            <ul>
+                 <li>
+                     <div class="node-content">
+                        <span class="toggler">Sentralitas Kepemimpinan</span>
+                        <div class="explanation">
+                            Kepemimpinan sangat penting untuk memahami perilaku kelompok karena pemimpin memberikan arah.
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                     <div class="node-content">
+                        <span class="toggler">Sifat dan Perilaku</span>
+                        <div class="explanation">
+                           Sifat (Ekstroversi, Kesadaran, Keterbukaan) dan dimensi perilaku (fokus tugas & fokus hubungan) memberikan wawasan.
+                        </div>
+                    </div>
+                </li>
+                 <li>
+                     <div class="node-content">
+                        <span class="toggler">Konteks Situasional</span>
+                        <div class="explanation">
+                           Penting untuk mempertimbangkan variabel situasional, terutama dampak pengikut.
+                        </div>
+                    </div>
+                 </li>
+                <li>
+                    <div class="node-content">
+                        <span class="toggler">Kepemimpinan Inspirasional & Otentik</span>
+                         <div class="explanation">
+                            Karismatik dan transformasional memberikan kontribusi besar. Pemimpin harus otentik dan dapat dipercaya.
+                         </div>
+                    </div>
+                </li>
+                 <li>
+                     <div class="node-content">
+                        <span class="toggler">Investasi Masa Depan</span>
+                        <div class="explanation">
+                            Perlu investasi dalam mentoring dan pelatihan pemimpin masa depan.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const togglers = document.querySelectorAll('.mindmap .toggler');
+
+        togglers.forEach(toggler => {
+            toggler.addEventListener('click', function() {
+                // Find the parent LI element
+                const parentLi = this.closest('li');
+                if (parentLi) {
+                    // Toggle the 'expanded' class on the parent LI
+                    parentLi.classList.toggle('expanded');
+                }
+            });
+        });
+
+         // Optional: Automatically expand the first level if needed, or keep specific nodes expanded by default using the 'expanded' class in HTML.
+         // Example: Make all top-level items start expanded
+         // const topLevelItems = document.querySelectorAll('.mindmap > li');
+         // topLevelItems.forEach(item => item.classList.add('expanded'));
+         // Note: The first item is already set to expanded in the HTML above.
+    });
+</script>
+
+</body>
+</html>
